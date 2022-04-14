@@ -1,13 +1,19 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 
-
-using MigraDocCore.DocumentObjectModel;
-using MigraDocCore.DocumentObjectModel.Tables;
-using MigraDocCore.Rendering;
+using BuildWithMigraDoc;using MigraDoc.DocumentObjectModel;
+using MigraDoc.DocumentObjectModel.Tables;
+using MigraDoc.Rendering;
 using PdfSharp.Pdf;
 
 Console.WriteLine("Hello, World!");
+
+new DocumentBuilder();
+
+Console.WriteLine("Press any key to continue...");
+
+Console.ReadKey();
+return;
 
 // Create a MigraDoc document
 Document document = CreateDocument();
@@ -36,7 +42,7 @@ var pdfRenderer = new PdfDocumentRenderer(unicode);
 
 // Associate the MigraDoc document with a renderer
 pdfRenderer.Document = document;
-const string filename = @"C:\Projects\BuildPdfForFun\SupportFiles\HelloWorld.pdf";
+const string filename = @"..\..\..\..\SupportFiles\HelloWorld.pdf";
 
 // Layout and render document to PDF
 pdfRenderer.RenderDocument();
