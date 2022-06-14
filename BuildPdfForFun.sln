@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildWithMigraDoc", "BuildWithMigraDoc\BuildWithMigraDoc.csproj", "{FF336C83-C2A7-4ECA-94EA-0CE52FA2FB86}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuildWithMigraDoc", "BuildWithMigraDoc\BuildWithMigraDoc.csproj", "{FF336C83-C2A7-4ECA-94EA-0CE52FA2FB86}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SupportFiles", "SupportFiles", "{CAF9CC13-E58E-4CB0-BBE7-4E69F33D2AA5}"
+	ProjectSection(SolutionItems) = preProject
+		SupportFiles\HelloWorld.pdf = SupportFiles\HelloWorld.pdf
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

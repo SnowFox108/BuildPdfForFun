@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+namespace BuildWithMigraDoc;
 
-namespace BuildWithMigraDoc
+public class DocumentBuilder
 {
-    public class DocumentBuilder
+    public DocumentBuilder()
     {
-        public DocumentBuilder()
-        {
-            
-        }
-
-
+        //new Sample1();
+        //new HeaderAndFooter();
+        new TableAsLayout();
     }
 }
+
