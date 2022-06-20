@@ -7,7 +7,8 @@ public class DocumentBuilder
     {
         //new Sample1();
         //new HeaderAndFooter();
-        new TableAsLayout();
+        //new TableAsLayout();
+        new MultipleLayouts();
     }
 }
 

@@ -23,16 +23,18 @@ public class HeaderAndFooter
         CreatePage();
         FillContent();
 
-        var pdfRenderer = new PdfDocumentRenderer(true);
+        //var pdfRenderer = new PdfDocumentRenderer(true);
 
-        pdfRenderer.Document = _document;
+        //pdfRenderer.Document = _document;
 
         // Layout and render document to PDF
-        pdfRenderer.RenderDocument();
+        //pdfRenderer.RenderDocument();
 
         // Save the document...
-        pdfRenderer.PdfDocument.Save(FillerText.Filename);
+        //pdfRenderer.PdfDocument.Save(FillerText.Filename);
     }
+
+    public Document Document() => _document;
 
     private void DefineStyles()
     {
@@ -70,19 +72,23 @@ public class HeaderAndFooter
     {
         // Each MigraDoc document needs at least one section.
         _section = _document.AddSection();
+        _section.PageSetup.PageWidth = Unit.FromCentimeter(20);
+        _section.PageSetup.PageHeight = Unit.FromCentimeter(29);
+        _section.PageSetup.LeftMargin = Unit.FromCentimeter(4.5);
+        _section.PageSetup.RightMargin = Unit.FromCentimeter(1);
 
-        // Put a logo in the header
+        //// Put a logo in the header
 
-        Paragraph paragraph = _section.Headers.Primary.AddParagraph();
-        paragraph.AddText("This is header");
-        paragraph.Format.Font.Size = 9;
+        //Paragraph paragraph = _section.Headers.Primary.AddParagraph();
+        //paragraph.AddText("This is header");
+        //paragraph.Format.Font.Size = 9;
 
-        // Create footer
+        //// Create footer
 
-        paragraph = _section.Footers.Primary.AddParagraph();
-        paragraph.AddText("PowerBooks Inc · Sample Street 42 · 56789 Cologne · Germany");
-        paragraph.Format.Font.Size = 9;
-        paragraph.Format.Alignment = ParagraphAlignment.Center;
+        //paragraph = _section.Footers.Primary.AddParagraph();
+        //paragraph.AddText("PowerBooks Inc · Sample Street 42 · 56789 Cologne · Germany");
+        //paragraph.Format.Font.Size = 9;
+        //paragraph.Format.Alignment = ParagraphAlignment.Center;
 
         // Create the text frame for the address
         _leftTextFrame = _section.AddTextFrame();
@@ -114,15 +120,27 @@ public class HeaderAndFooter
         paragraph.AddLineBreak();
         paragraph.AddText("address/postalCode" + " " + "address/city");
 
-        for (int i = 0; i < 15; i++)
-        {
-            paragraph = _rightTextFrame.AddParagraph();
+        //for (int i = 0; i < 15; i++)
+        //{
+        //    paragraph = _rightTextFrame.AddParagraph();
 
-            paragraph.Format.Font.Color = Color.FromCmyk(100, 30, 20, 50);
-            paragraph.Format.Alignment = ParagraphAlignment.Justify;
-            paragraph.AddText(FillerText.Text);
+        //    paragraph.Format.Font.Color = Color.FromCmyk(100, 30, 20, 50);
+        //    paragraph.Format.Alignment = ParagraphAlignment.Justify;
+        //    paragraph.AddText(FillerText.Text);
 
-        }
+        //}
+        paragraph = _section.AddParagraph();
+        paragraph.AddText("");
+        paragraph.Format.Font.Size = 18;
+
+        paragraph = _section.AddParagraph();
+        paragraph.AddText("");
+        paragraph.Format.Font.Size = 18;
+
+        paragraph = _section.AddParagraph();
+        paragraph.AddText("");
+        paragraph.Format.Font.Size = 14;
+
 
         for (int i = 0; i < 55; i++)
         {
